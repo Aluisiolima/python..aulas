@@ -27,7 +27,7 @@ while True:
            
             valor_do_saque = input("quanto deseja sacar:")
            
-            if int(valor_do_saque) <= LIMITE_DIARIO_VALOR_SAQUE and int(valor_do_saque) <= saldo:
+            if int(valor_do_saque) <= LIMITE_DIARIO_VALOR_SAQUE and int(valor_do_saque) <= saldo and int(valor_do_saque) >= 0:
                 print("saque concluido")
                 saques += 1
                 saldo -= int(valor_do_saque)
@@ -44,7 +44,7 @@ Seu saldo e de {float(saldo)}""")
                 print('operacao invalida')
 
         else :
-            print(f"vocw ja excedeu o limete de saques diario de {LIMITE_DE_SAQUE_DIARIO}")        
+            print(f"voce ja excedeu o limete de saques diario de {LIMITE_DE_SAQUE_DIARIO}")        
    
    
     elif opcao == "2":
