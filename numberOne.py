@@ -31,15 +31,16 @@ while True:
                 saldo -= int(valor_do_saque)
                 print(f"voce sacou {float(valor_do_saque)} da sua conta \n")
                 estrato_bancario += f"saque de {float(valor_do_saque)}\n"
-           
+            
+            elif  int(valor_do_saque) >= saldo :
+                print('operacao invalida\n')
+                print(f"""voce nao tem saldo suficiente para esse saque
+Seu saldo e de {float(saldo)}\n""") 
+                  
             elif  int(valor_do_saque) > LIMITE_DIARIO_VALOR_SAQUE :
                 print('operacao invalida\n')
                 print(f"seu limete diario de saque e somente de R${float(LIMITE_DIARIO_VALOR_SAQUE)}\n")  
            
-            elif  int(valor_do_saque) >= saldo :
-                print('operacao invalida\n')
-                print(f"""voce nao tem saldo suficiente para esse saque
-Seu saldo e de {float(saldo)}\n""")   
             else : 
                 print('operacao invalida\n')
 
