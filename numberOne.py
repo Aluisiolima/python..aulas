@@ -17,22 +17,22 @@ LIMITE_DIARIO_VALOR_SAQUE = 500
 
 
 while True:
-    opcao = input(menu)
+    opcao = int(input(menu))
 
-    if opcao == "1":
+    if opcao == 1:
     
         if saques < LIMITE_DE_SAQUE_DIARIO:
            
-            valor_do_saque = input("quanto deseja sacar:")
+            valor_do_saque = int(input("quanto deseja sacar:"))
            
-            if int(valor_do_saque) <= LIMITE_DIARIO_VALOR_SAQUE and int(valor_do_saque) <= saldo and int(valor_do_saque) >= 0:
+            if valor_do_saque <= LIMITE_DIARIO_VALOR_SAQUE and valor_do_saque <= saldo and valor_do_saque >= 0:
                 print("saque concluido\n")
                 saques += 1
-                saldo -= int(valor_do_saque)
+                saldo -= valor_do_saque
                 print(f"voce sacou {float(valor_do_saque)} da sua conta \n")
                 estrato_bancario += f"saque de {float(valor_do_saque)}\n"
             
-            elif  int(valor_do_saque) >= saldo :
+            elif  valor_do_saque >= saldo :
                 print('operacao invalida\n')
                 print(f"""voce nao tem saldo suficiente para esse saque
 Seu saldo e de {float(saldo)}\n""") 
@@ -48,11 +48,11 @@ Seu saldo e de {float(saldo)}\n""")
             print(f"voce ja excedeu o limete de saques diario de {LIMITE_DE_SAQUE_DIARIO}\n")        
    
    
-    elif opcao == "2":
-        valor_do_deposito = input("quanto deseja depositar:")
+    elif opcao == 2:
+        valor_do_deposito = int(input("quanto deseja depositar:"))
 
         if int(valor_do_deposito) >= 0:
-            saldo += int(valor_do_deposito)
+            saldo += valor_do_deposito
             print(f"voce depositou {float(valor_do_deposito)} na sua conta \n")
             estrato_bancario += f"depositor de {float(valor_do_deposito)}\n"
         else:
@@ -60,7 +60,7 @@ Seu saldo e de {float(saldo)}\n""")
         
        
 
-    elif  opcao == "3":
+    elif  opcao == 3:
         print(f"\n####### EXTRATO ###### ")
         print()
         print(f"Nao foram realizado nenhuma operacao ate agora." if not estrato_bancario else estrato_bancario)
@@ -68,7 +68,7 @@ Seu saldo e de {float(saldo)}\n""")
         print()
         print('######################\n')
 
-    elif opcao == "0":
+    elif opcao == 0:
         break
 
     else :
