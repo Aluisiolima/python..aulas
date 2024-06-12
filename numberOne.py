@@ -178,13 +178,13 @@ class Deposito(Transacao):
 def menu():
     menu = """\n
     ================ MENU ================
-    [1]\tDepositar
-    [2]\tSacar
-    [3]\tExtrato
-    [4]\tNova conta
-    [5]\tListar contas
-    [6]\tNovo usuário
-    [0]\tSair
+    [d]\tDepositar
+    [s]\tSacar
+    [e]\tExtrato
+    [nc]\tNova conta
+    [lc]\tListar contas
+    [nu]\tNovo usuário
+    [q]\tSair
     => """
     return input(textwrap.dedent(menu))
 
@@ -313,26 +313,26 @@ def main():
     while True:
         opcao = menu()
 
-        if opcao == "1":
+        if opcao == "d":
             depositar(clientes)
 
-        elif opcao == "2":
+        elif opcao == "s":
             sacar(clientes)
 
-        elif opcao == "3":
+        elif opcao == "e":
             exibir_extrato(clientes)
 
-        elif opcao == "6":
+        elif opcao == "nu":
             criar_cliente(clientes)
 
-        elif opcao == "4":
+        elif opcao == "nc":
             numero_conta = len(contas) + 1
             criar_conta(numero_conta, clientes, contas)
 
-        elif opcao == "5":
+        elif opcao == "lc":
             listar_contas(contas)
 
-        elif opcao == "0":
+        elif opcao == "q":
             break
 
         else:
